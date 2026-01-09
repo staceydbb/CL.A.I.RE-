@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once 'db_connect.php';
 
 if (!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])) {
@@ -105,17 +105,23 @@ try {
                 </div>
 
                 <!-- Dropdown Menu -->
-                <div class="absolute right-0 top-12 w-48 bg-white rounded-lg shadow-lg py-2 hidden group-hover:block border border-gray-100 z-50">
-                    <a href="profile.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-pink">
-                        <i class="fa-solid fa-user mr-2"></i> Profile
+                <div class="absolute right-0 top-12 w-56 bg-white rounded-lg shadow-lg py-2 hidden group-hover:block border border-gray-100 z-50">
+                    <a href="profile.php"
+                    class="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-pink leading-none">
+                        <i class="fa-solid fa-user w-4 text-gray-500"></i>
+                        <span class="font-medium">Profile</span>
                     </a>
-                    <!-- User List located here for professional access control (TC003) -->
-                    <a href="user_list.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-pink">
-                        <i class="fa-solid fa-users mr-2"></i> User List
+
+                    <a href="user_list.php"
+                    class="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-pink leading-none">
+                        <i class="fa-solid fa-users w-4 text-gray-500"></i>
+                        <span class="font-medium">User List</span>
                     </a>
-                    <div class="border-t border-gray-100 my-1"></div>
-                    <a href="logout.php" class="block px-4 py-2 text-sm text-red-600 hover:bg-red-50">
-                        <i class="fa-solid fa-right-from-bracket mr-2"></i> Logout
+
+                    <a href="logout.php"
+                    class="flex items-center gap-3 px-4 py-2 text-sm text-red-600 hover:bg-red-50 leading-none">
+                        <i class="fa-solid fa-right-from-bracket w-4 text-red-500"></i>
+                        <span class="font-medium">Logout</span>
                     </a>
                 </div>
             </div>
@@ -153,7 +159,7 @@ try {
         <!-- Action Buttons -->
         <div class="flex flex-col sm:flex-row justify-end gap-3 mb-6">
              <a href="patients.php" class="bg-white border border-brand-pink text-brand-pink hover:bg-brand-light font-semibold py-2.5 px-6 rounded-lg transition shadow-sm flex items-center justify-center gap-2 text-sm active:scale-95">
-                <i class="fa-solid fa-folder-open"></i> Manage Cases
+                <i class="fa-solid fa-folder-open"></i> Manage Patients
             </a>
             <a href="analyze.php" class="bg-brand-pink hover:bg-brand-hover text-white font-semibold py-2.5 px-6 rounded-lg transition shadow-md flex items-center justify-center gap-2 text-sm active:scale-95">
                 <i class="fa-solid fa-plus"></i> New Analysis
@@ -164,9 +170,6 @@ try {
         <div>
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-xl font-bold text-brand-dark">Recent Analyses</h2>
-                <?php if(!empty($recentAnalyses)): ?>
-                    <a href="patients.php" class="text-sm text-brand-pink hover:underline font-medium">View All History</a>
-                <?php endif; ?>
             </div>
 
             <?php if(empty($recentAnalyses)): ?>
@@ -216,8 +219,9 @@ try {
                                     <?php echo date('M d, Y', strtotime($record['created_at'])); ?>
                                 </td>
                                 <td class="px-6 py-4 text-right">
-                                    <a href="analyze.php?patient_id=<?php echo $record['patient_id']; ?>" class="text-brand-pink hover:text-brand-hover font-bold text-xs uppercase tracking-widest">
-                                        View Details
+                                    <a href="report.php?id=<?php echo urlencode($record['record_id']); ?>"
+                                        class="text-brand-pink hover:text-brand-hover font-bold text-xs">
+                                        View Report
                                     </a>
                                 </td>
                             </tr>
@@ -229,8 +233,19 @@ try {
         </div>
     </main>
 
-    <footer class="py-6 text-center text-gray-400 text-xs">
-        &copy; <?php echo date('Y'); ?> CLA.I.RE System • All rights Reserved
+    <footer class="pt-4 pb-5 text-center text-gray-400 text-xs">
+        <div class="flex justify-center items-center gap-1 flex-wrap text-gray-400 font-medium">
+            <a href="privacy.php" class="hover:text-brand-pink transition">Privacy Policy</a>
+            <span>&bull;</span>
+            <a href="terms.php" class="hover:text-brand-pink transition">Terms of Use</a>
+            <span>&bull;</span>
+            <a href="legal.php" class="hover:text-brand-pink transition">Legal</a>
+            <span>&bull;</span>
+            <a href="developers.php" class="hover:text-brand-pink transition">About the Developers</a>
+        </div>
+        <div class="mt-1 text-gray-400 font-normal">
+            &copy; <?php echo date('Y'); ?> CLA.I.RE System &bull; All rights Reserved
+        </div>
     </footer>
 
 </body>
