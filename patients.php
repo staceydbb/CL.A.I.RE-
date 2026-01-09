@@ -202,10 +202,10 @@ try {
 
     </main>
 
-    <footer class="py-8 text-center text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-        &copy; <?php echo date('Y'); ?> CLA.I.RE System • Powered by Intelligent Screening
+     <footer class="py-6 text-center text-gray-400 text-xs">
+        &copy; <?php echo date('Y'); ?> CLA.I.RE System. All rights reserved.
     </footer>
-
+    
 </body>
 </html>
 <?php ob_end_flush(); ?>
