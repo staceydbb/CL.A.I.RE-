@@ -152,9 +152,9 @@ try {
         </div>
     </main>
 
-    <footer class="py-6 text-center text-gray-400 text-xs mt-auto">
-        &copy; <?php echo date('Y'); ?> CLA.I.RE System • Professional Directory
+      <footer class="py-6 text-center text-gray-400 text-xs">
+        &copy; <?php echo date('Y'); ?> CLA.I.RE System. All rights reserved.
     </footer>
-
+    
 </body>
 </html>
