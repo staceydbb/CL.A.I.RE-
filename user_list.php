@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once 'db_connect.php';
 
 // Security: If the user is not logged in, redirect them back to the login page
@@ -89,9 +89,6 @@ try {
                     <a href="" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-pink">
                         <i class="fa-solid fa-folder-open mr-2"></i> Profile
                     </a>
-                    <a href="user_list.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-pink">
-                        <i class="fa-solid fa-users mr-2"></i> User List
-                    </a>
                     <div class="border-t border-gray-100 my-1"></div>
                     <a href="logout.php" class="block px-4 py-2 text-sm text-red-600 hover:bg-red-50">
                         <i class="fa-solid fa-right-from-bracket mr-2"></i> Logout
@@ -152,15 +149,15 @@ try {
         </div>
     </main>
 
-     <footer class="pt-4 pb-5 text-center text-gray-400 text-xs">
+    <footer class="pt-4 pb-5 text-center text-gray-400 text-xs">
         <div class="flex justify-center items-center gap-1 flex-wrap text-gray-400 font-medium">
-            <a href="privacy.php" class="hover:text-brand-pink transition">Privacy Policy</a>
+            <a href="privacy.php" target="_blank" rel="noopener noreferrer" class="hover:text-brand-pink transition">Privacy Policy</a>
             <span>&bull;</span>
-            <a href="terms.php" class="hover:text-brand-pink transition">Terms of Use</a>
+            <a href="terms.php" target="_blank" rel="noopener noreferrer" class="hover:text-brand-pink transition">Terms of Use</a>
             <span>&bull;</span>
-            <a href="legal.php" class="hover:text-brand-pink transition">Legal</a>
+            <a href="legal.php" target="_blank" rel="noopener noreferrer" class="hover:text-brand-pink transition">Legal</a>
             <span>&bull;</span>
-            <a href="developers.php" class="hover:text-brand-pink transition">About the Developers</a>
+            <a href="developers.php" target="_blank" rel="noopener noreferrer" class="hover:text-brand-pink transition">About the Developers</a>
         </div>
         <div class="mt-1 text-gray-400 font-normal">
             &copy; <?php echo date('Y'); ?> CLA.I.RE System &bull; All rights Reserved
