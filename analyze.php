@@ -222,10 +222,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
                     </div>
 
-                    <button type="submit" id="submit-btn" onclick="this.form.action='analyze.php'; this.form.method='POST';" class="w-full bg-brand-pink text-white font-bold py-4 rounded-full shadow-lg shadow-brand-pink/20 hover:bg-brand-accent transition transform active:scale-95 flex items-center justify-center gap-3 text-lg">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i> 
-                        <span id="btn-text">Initiate AI Assessment</span>
-                    </button>
+                    <div class="flex flex-col items-center space-y-2 w-full">
+                        <button type="submit" id="submit-btn"
+                            onclick="this.form.action='analyze.php'; this.form.method='POST';"
+                            class="w-full bg-brand-pink text-white font-bold py-4 rounded-full hover:bg-brand-accent transition transform active:scale-95 flex items-center justify-center gap-3 text-lg">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <span id="btn-text">Initiate AI Assessment</span>
+                        </button>
+
+                        <a href="add_patient.php" class="text-sm text-brand-pink hover:underline transition">
+                            Register a new patient
+                        </a>
+                    </div>
                 </form>
             </div>
 
@@ -373,20 +381,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         });
     </script>
-  <footer class="pt-4 pb-5 text-center text-gray-400 text-xs">
-        <div class="flex justify-center items-center gap-1 flex-wrap text-gray-400 font-medium">
-            <a href="privacy.php" class="hover:text-brand-pink transition">Privacy Policy</a>
-            <span>&bull;</span>
-            <a href="terms.php" class="hover:text-brand-pink transition">Terms of Use</a>
-            <span>&bull;</span>
-            <a href="legal.php" class="hover:text-brand-pink transition">Legal</a>
-            <span>&bull;</span>
-            <a href="developers.php" class="hover:text-brand-pink transition">About the Developers</a>
-        </div>
-        <div class="mt-1 text-gray-400 font-normal">
-            &copy; <?php echo date('Y'); ?> CLA.I.RE System &bull; All rights Reserved
-        </div>
-    </footer>
+
 </body>
 </html>
 <?php ob_end_flush(); ?>
