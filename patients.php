@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 ob_start();
 require_once 'db_connect.php';
 
@@ -201,22 +201,22 @@ try {
         </div>
 
     </main>
-  <footer class="pt-4 pb-5 text-center text-gray-400 text-xs">
+
+    <footer class="pt-4 pb-5 text-center text-gray-400 text-xs">
         <div class="flex justify-center items-center gap-1 flex-wrap text-gray-400 font-medium">
-            <a href="privacy.php" class="hover:text-brand-pink transition">Privacy Policy</a>
+            <a href="privacy.php" target="_blank" rel="noopener noreferrer" class="hover:text-brand-pink transition">Privacy Policy</a>
             <span>&bull;</span>
-            <a href="terms.php" class="hover:text-brand-pink transition">Terms of Use</a>
+            <a href="terms.php" target="_blank" rel="noopener noreferrer" class="hover:text-brand-pink transition">Terms of Use</a>
             <span>&bull;</span>
-            <a href="legal.php" class="hover:text-brand-pink transition">Legal</a>
+            <a href="legal.php" target="_blank" rel="noopener noreferrer" class="hover:text-brand-pink transition">Legal</a>
             <span>&bull;</span>
-            <a href="developers.php" class="hover:text-brand-pink transition">About the Developers</a>
+            <a href="developers.php" target="_blank" rel="noopener noreferrer" class="hover:text-brand-pink transition">About the Developers</a>
         </div>
         <div class="mt-1 text-gray-400 font-normal">
             &copy; <?php echo date('Y'); ?> CLA.I.RE System &bull; All rights Reserved
         </div>
     </footer>
 
-    
 </body>
 </html>
 <?php ob_end_flush(); ?>
