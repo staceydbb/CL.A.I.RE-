@@ -71,7 +71,8 @@
 
             <!-- Subtitle -->
             <p class="text-brand-pink/90 font-medium text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
-                An AI Technology to assist healthcare workers in early detection of cervical cancer by analyzing Pap smear cell images. Designed for resource-limited healthcare settings.
+                An AI tool designed to assist healthcare workers in early detection of cervical cancer by analyzing Pap smear cell images.
+                Intended for resource-limited healthcare settings.
             </p>
 
           <div class="flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
@@ -150,20 +151,24 @@
         </div>
 
     </main>
-  <footer class="pt-4 pb-5 text-center text-gray-400 text-xs">
+
+    <footer class="pt-4 pb-5 text-center text-gray-400 text-xs">
         <div class="flex justify-center items-center gap-1 flex-wrap text-gray-400 font-medium">
-            <a href="privacy.php" class="hover:text-brand-pink transition">Privacy Policy</a>
+            <a href="privacy.php" target="_blank" rel="noopener noreferrer" class="hover:text-brand-pink transition">Privacy Policy</a>
             <span>&bull;</span>
-            <a href="terms.php" class="hover:text-brand-pink transition">Terms of Use</a>
+            <a href="terms.php" target="_blank" rel="noopener noreferrer" class="hover:text-brand-pink transition">Terms of Use</a>
             <span>&bull;</span>
-            <a href="legal.php" class="hover:text-brand-pink transition">Legal</a>
+            <a href="legal.php" target="_blank" rel="noopener noreferrer" class="hover:text-brand-pink transition">Legal</a>
             <span>&bull;</span>
-            <a href="developers.php" class="hover:text-brand-pink transition">About the Developers</a>
+            <a href="developers.php" target="_blank" rel="noopener noreferrer" class="hover:text-brand-pink transition">About the Developers</a>
         </div>
         <div class="mt-1 text-gray-400 font-normal">
             &copy; <?php echo date('Y'); ?> CLA.I.RE System &bull; All rights Reserved
         </div>
     </footer>
+
+</body>
+</html>
 
 </body>
 </html>
